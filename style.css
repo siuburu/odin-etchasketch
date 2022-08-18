@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(36, 33, 36);
+	color: azure;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 600px;
+	height: 600px;
+	border: 1px solid grey;
+}
+
+.square {
+	flex: 1 0 auto;
+	width: calc(100% / 256);
+	height: calc(100% / 256);
+	background-color: white;
+	border: 1px solid black;
+}
+
+.square:hover {
+	background-color: yellow;
+}
