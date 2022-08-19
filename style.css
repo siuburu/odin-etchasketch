@@ -22,9 +22,5 @@ body {
 
 .square {
 	background-color: white;
-	color: rgb(211, 27, 27));
-}
-
-.square:hover {
-	background-color: yellow;
+	opacity: 1;
 }
