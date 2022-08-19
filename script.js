@@ -15,6 +15,7 @@ function generateDiv(numberSquares) {
 		for (let j = 0; j < numberSquares; j++) {
 			let newDiv = document.createElement("div");
 			newDiv.classList.add("square");
+			newDiv.setAttribute("data-shade", "0");
 			container.style.gridTemplateColumns = `repeat(${numberSquares}, 1fr)`;
 			container.appendChild(newDiv);
 		}
@@ -22,12 +23,21 @@ function generateDiv(numberSquares) {
 	gridElements = document.querySelectorAll(".square");
 	setMouseOverEvent();
 }
-
 function setMouseOverEvent() {
 	//função que atribui a mudança de background para cada div ao acionar o mouseOver
 	gridElements.forEach((element) => {
 		element.addEventListener("mouseover", () => {
-			element.style.backgroundColor = getRandomColor();
+			element.getAttribute('data-shade') = element.dataset.shade.parseInt() + 1;
+			element.style.backgroundColor =
+				"rgba(" +
+				0 +
+				"," +
+				0 +
+				"," +
+				0 +
+				"," +
+				element.dataset.shade.parseInt() / 10 +
+				")";
 		});
 	});
 }
@@ -36,7 +46,7 @@ function getRandomColor() {
 	//Retorna uma cor no formato rgb aleatória
 	return `rgba(${Math.random() * 256}, ${Math.random() * 256}, ${
 		Math.random() * 256
-	}, 0.1)`;
+	})`;
 }
 gridSlider.onmouseup = function () {
 	generateDiv(this.value);
