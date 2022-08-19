@@ -17,10 +17,12 @@ body {
 	height: 500px;
 	grid-template-columns: repeat(16, 1fr);
 	border: 1px solid grey;
+	background-color: white;
 }
 
 .square {
 	background-color: white;
+	color: rgb(211, 27, 27));
 }
 
 .square:hover {

@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 let gridElements = document.querySelectorAll(".square");
 const gridSlider = document.querySelector(".gridSlider");
+const divDescription = document.querySelector(".divDescription");
 generateDiv(gridSlider.value);
 function removeAllChildNodes(parent) {
 	while (parent.firstChild) {
@@ -23,18 +24,21 @@ function generateDiv(numberSquares) {
 }
 
 function setMouseOverEvent() {
-	//função que atribui a mudança de backgroud para cada div ao acionar o mouseOver
+	//função que atribui a mudança de background para cada div ao acionar o mouseOver
 	gridElements.forEach((element) => {
 		element.addEventListener("mouseover", () => {
-			element.style.backgroundColor = "red";
+			element.style.backgroundColor = getRandomColor();
 		});
 	});
 }
+
+function getRandomColor() {
+	//Retorna uma cor no formato rgb aleatória
+	return `rgba(${Math.random() * 256}, ${Math.random() * 256}, ${
+		Math.random() * 256
+	}, 0.1)`;
+}
 gridSlider.onmouseup = function () {
 	generateDiv(this.value);
+	divDescription.textContent = `Div ${gridSlider.value} x ${gridSlider.value}`;
 };
-const newGridBtn = document.querySelector(".newGrid");
-newGridBtn.addEventListener("click", () => {
-	let value = prompt("Input new grid value");
-	generateDiv(value);
-});
