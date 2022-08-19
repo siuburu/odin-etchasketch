@@ -12,17 +12,14 @@ body {
 	color: azure;
 }
 .container {
-	display: flex;
-	flex-wrap: wrap;
-	width: 600px;
-	height: 600px;
+	display: grid;
+	width: 500px;
+	height: 500px;
+	grid-template-columns: repeat(16, 1fr);
 	border: 1px solid grey;
 }
 
 .square {
-	flex: 1 0 auto;
-	width: calc(100% / 256);
-	height: calc(100% / 256);
 	background-color: white;
 	border: 1px solid black;
 }
