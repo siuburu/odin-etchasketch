@@ -8,19 +8,28 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: rgb(36, 33, 36);
-	color: azure;
+	background-color: rgb(230, 230, 230);
+	color: #3a3939;
 }
 .container {
 	display: grid;
 	width: 500px;
 	height: 500px;
 	grid-template-columns: repeat(16, 1fr);
-	border: 1px solid grey;
+	border: 1px solid rgb(173, 167, 167);
 	background-color: white;
 }
 
 .square {
 	background-color: white;
 	opacity: 1;
+}
+.title {
+	font-size: 50px;
+	text-align: center;
+}
+.colorPicker {
+	background-color: transparent;
+	border: 3px solid #333232;
+	padding: 0;
 }

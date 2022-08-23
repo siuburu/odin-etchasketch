@@ -30,8 +30,11 @@ function setMouseOverEvent() {
 		element.addEventListener("mouseover", () => {
 			element.dataset.alpha = parseInt(element.dataset.alpha) + 1;
 			element.style.backgroundColor = getRgb(colorPicker.value);
-			element.style.backgroundColor =
-				"rgba(" +
+			element.style.backgroundColor = setAlpha(
+				getRgb(colorPicker.value),
+				parseInt(element.dataset.alpha)
+			);
+			/*"rgba(" +
 				15 +
 				"," +
 				221 +
@@ -39,7 +42,7 @@ function setMouseOverEvent() {
 				42 +
 				"," +
 				parseInt(element.dataset.alpha) / 10 +
-				")";
+				")";*/
 		});
 	});
 }
@@ -53,13 +56,16 @@ function getRandomColor() {
 
 function setAlpha(color, alpha) {
 	/*Definir o alpha dada uma cor no formato rgba */
+	let bColorLength = color.length;
+	a = color.slice(0, bColorLength - 4);
+	return a + alpha / 10 + ")";
 }
 function getRgb(hex) {
 	//converte uma cor no formato hexadecimal para rgb e retorna no formato rgba
 	let r = parseInt(hex.slice(1, 3), 16);
 	let g = parseInt(hex.slice(3, 5), 16);
 	let b = parseInt(hex.slice(5), 16);
-	return "rgb(" + r + "," + g + "," + b + "," + 1 + ")";
+	return "rgba(" + r + "," + g + "," + b + "," + 0.99 + ")";
 }
 gridSlider.oninput = function () {
 	divDescription.textContent = `Div ${gridSlider.value} x ${gridSlider.value}`;
