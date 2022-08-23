@@ -54,6 +54,15 @@ button {
 	width: inherit;
 	background-color: transparent;
 }
+button.active {
+	background-color: black;
+	color: #d6ed17ff;
+	border-color: black;
+}
+button:hover {
+	transition: transform 0.1s ease-in-out;
+	transform: scale(1.1);
+}
 .colorPicker {
 	-webkit-appearance: none;
 	-moz-appearance: none;
