@@ -8,8 +8,8 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: rgb(230, 230, 230);
-	color: #3a3939;
+	background-color: #606060ff;
+	color: #d6ed17ff;
 	display: flex;
 	flex-flow: column;
 }
@@ -19,6 +19,7 @@ body {
 .container {
 	display: flex;
 	justify-content: center;
+	gap: 100px;
 }
 .sideBar {
 	display: flex;
@@ -46,8 +47,9 @@ body {
 	text-align: center;
 }
 button {
-	border: 1px solid black;
+	border: 1px solid #d6ed17ff;
 	border-radius: 5px;
+	color: inherit;
 	padding: 10px;
 	width: inherit;
 	background-color: transparent;
