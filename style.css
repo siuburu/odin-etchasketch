@@ -10,8 +10,25 @@
 body {
 	background-color: rgb(230, 230, 230);
 	color: #3a3939;
+	display: flex;
+	flex-flow: column;
+}
+.title {
+	padding: 20px 0;
 }
 .container {
+	display: flex;
+	justify-content: center;
+}
+.sideBar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+	width: 250px;
+}
+.containerGrid {
 	display: grid;
 	width: 500px;
 	height: 500px;
@@ -28,8 +45,36 @@ body {
 	font-size: 50px;
 	text-align: center;
 }
-.colorPicker {
+button {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 10px;
+	width: inherit;
 	background-color: transparent;
-	border: 3px solid #333232;
-	padding: 0;
+}
+.colorPicker {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100px;
+	height: 100px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+.colorPicker::-webkit-color-swatch {
+	border-radius: 15px;
+	border: none;
+}
+.colorPicker::-moz-color-swatch {
+	border-radius: 15px;
+	border: none;
+}
+
+.footer p {
+	text-align: center;
+	padding: 30px;
+}
+.gridSlider {
+	width: inherit;
 }

@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".containerGrid");
 let gridElements = document.querySelectorAll(".square");
 const gridSlider = document.querySelector(".gridSlider");
 const divDescription = document.querySelector(".divDescription");
