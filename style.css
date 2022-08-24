@@ -91,3 +91,42 @@ button:hover {
 	width: inherit;
 	border-radius: 20px;
 }
+
+input[type="range"] {
+	display: block;
+	-webkit-appearance: none;
+	background-color: #bdc3c7;
+	width: inherit;
+	height: 5px;
+	border-radius: 5px;
+	margin: 0 auto;
+	outline: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-color: #d6ed17ff;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid white;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+​ input[type="range"]::-webkit-slider-thumb:hover {
+	background-color: white;
+	border: 2px solid #d6ed17ff;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+	transform: scale(1.6);
+}
+
+.divDescription {
+	border-bottom: 4px dashed #bdc3c7;
+	text-align: center;
+	font-weight: bold;
+	font-size: 3em;
+	width: inherit;
+	line-height: 60px;
+	letter-spacing: -0.07em;
+	text-shadow: rgb(24, 21, 21) 2px 2px 2px;
+}
