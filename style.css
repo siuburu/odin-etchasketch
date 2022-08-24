@@ -1,8 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:700);
 * {
 	margin: 0;
-	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 	box-sizing: border-box;
@@ -12,6 +11,7 @@ body {
 	color: #d6ed17ff;
 	display: flex;
 	flex-flow: column;
+	font-family: "Dosis", Arial, Helvetica, sans-serif;
 }
 /* Header */
 .title {
