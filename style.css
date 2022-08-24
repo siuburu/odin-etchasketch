@@ -35,8 +35,8 @@ body {
 }
 .containerGrid {
 	display: grid;
-	width: 500px;
-	height: 500px;
+	width: 639px;
+	height: 639px;
 	grid-template-columns: repeat(16, 1fr);
 	border: 1px solid rgb(173, 167, 167);
 	background-color: white;
