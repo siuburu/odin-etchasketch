@@ -1,8 +1,44 @@
+const DEFAULT_MODE = "color";
+
+let currentMode = DEFAULT_MODE;
 const container = document.querySelector(".containerGrid");
 let gridElements = document.querySelectorAll(".square");
 const gridSlider = document.querySelector(".gridSlider");
 const divDescription = document.querySelector(".divDescription");
 const colorPicker = document.querySelector(".colorPicker");
+
+const setColorBtn = document.querySelector("#setColorBtn");
+const shadeBtn = document.querySelector("#shadeBtn");
+const eraserBtn = document.querySelector("#eraserBtn");
+const clearBtn = document.querySelector("#clearBtn");
+const randomColorBtn = document.querySelector("#randomColorBtn");
+function setCurrentMode(newMode) {
+	currentMode = newMode;
+	activateBtn(newMode);
+}
+activateBtn(DEFAULT_MODE);
+function activateBtn(newMode) {
+	setColorBtn.classList.remove("active");
+	shadeBtn.classList.remove("active");
+	eraserBtn.classList.remove("active");
+	randomColorBtn.classList.remove("active");
+
+	if (newMode === "color") {
+		setColorBtn.classList.add("active");
+	} else if (newMode === "random") {
+		randomColorBtn.classList.add("active");
+	} else if (newMode === "shade") {
+		shadeBtn.classList.add("active");
+	} else if (newMode === "eraser") {
+		eraserBtn.classList.add("active");
+	}
+}
+
+setColorBtn.onclick = () => setCurrentMode("color");
+randomColorBtn.onclick = () => setCurrentMode("random");
+shadeBtn.onclick = () => setCurrentMode("shade");
+eraserBtn.onclick = () => setCurrentMode("eraser");
+clearBtn.onclick = () => generateDiv(gridSlider.value);
 generateDiv(gridSlider.value);
 function removeAllChildNodes(parent) {
 	while (parent.firstChild) {
@@ -28,21 +64,24 @@ function setMouseOverEvent() {
 	//função que atribui a mudança de background para cada div ao acionar o mouseOver
 	gridElements.forEach((element) => {
 		element.addEventListener("mouseover", () => {
-			element.dataset.alpha = parseInt(element.dataset.alpha) + 1;
-			element.style.backgroundColor = getRgb(colorPicker.value);
-			element.style.backgroundColor = setAlpha(
-				getRgb(colorPicker.value),
-				parseInt(element.dataset.alpha)
-			);
-			/*"rgba(" +
-				15 +
-				"," +
-				221 +
-				"," +
-				42 +
-				"," +
-				parseInt(element.dataset.alpha) / 10 +
-				")";*/
+			switch (currentMode) {
+				case "random":
+					element.style.backgroundColor = getRandomColor();
+					break;
+				case "color":
+					element.style.backgroundColor = getRgb(colorPicker.value);
+					break;
+				case "shade":
+					element.dataset.alpha = parseInt(element.dataset.alpha) + 1;
+
+					element.style.backgroundColor = setAlpha(
+						getRgb(colorPicker.value),
+						parseInt(element.dataset.alpha)
+					);
+					break;
+				case "eraser":
+					element.style.backgroundColor = "#FFFFFF";
+			}
 		});
 	});
 }
