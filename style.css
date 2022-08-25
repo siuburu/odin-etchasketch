@@ -10,12 +10,14 @@ body {
 	background-color: #606060ff;
 	color: #d6ed17ff;
 	display: flex;
+	min-height: 100vh;
 	flex-flow: column;
 	font-family: "Dosis", Arial, Helvetica, sans-serif;
 }
 /* Header */
 .title {
 	padding: 20px 0;
+	margin-left: 300px;
 	font-size: 50px;
 	text-align: center;
 }
@@ -24,6 +26,7 @@ body {
 	display: flex;
 	justify-content: center;
 	gap: 100px;
+	flex: 1;
 }
 .sideBar {
 	display: flex;
@@ -83,9 +86,25 @@ button:hover {
 	border: none;
 }
 /*footer*/
+.footer a {
+	text-decoration: none;
+	color: #d6ed17ff;
+}
 .footer p {
+	margin-top: auto;
+	flex-shrink: 0;
+	font-size: 18px;
 	text-align: center;
 	padding: 30px;
+}
+.footer img {
+	max-width: 20px;
+	max-height: 20px;
+	margin-left: 5px;
+}
+.footer img:hover {
+	transition: transform 0.3s ease-in-out 0s;
+	transform: rotate(360deg);
 }
 .gridSlider {
 	width: inherit;
