@@ -107,7 +107,7 @@ function getRgb(hex) {
 	return "rgba(" + r + "," + g + "," + b + "," + 0.99 + ")";
 }
 gridSlider.oninput = function () {
-	divDescription.textContent = `Div ${gridSlider.value} x ${gridSlider.value}`;
+	divDescription.textContent = `${gridSlider.value} x ${gridSlider.value}`;
 };
 gridSlider.onmouseup = function () {
 	generateDiv(this.value);
